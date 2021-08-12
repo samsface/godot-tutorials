@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Job",
 "language": "GDScript",
-"path": "res://Worker/job.gd"
+"path": "res://worker/job.gd"
 } ]
 _global_script_class_icons={
 "Job": ""
@@ -20,13 +20,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Async Load"
+config/name="Background Loading"
 run/main_scene="res://example.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Worker="*res://Worker/worker.gd"
+Worker="*res://worker/worker.tscn"
 
 [physics]
 
