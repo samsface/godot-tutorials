@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Worker/worker.gd" type="Script" id=1]
+
+[node name="worker" type="Viewport"]
+size = Vector2( 1, 1 )
+render_target_clear_mode = 1
+render_target_update_mode = 0
+gui_disable_input = true
+script = ExtResource( 1 )
