@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/tree_1.png" type="Texture" id=1]
+[ext_resource path="res://entities/tool.gd" type="Script" id=2]
+
+[node name="entity" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -9.92126, 36.9071 )
+texture = ExtResource( 1 )

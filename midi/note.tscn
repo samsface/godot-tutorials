@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://arrow.png" type="Texture" id=1]
+[ext_resource path="res://note.gd" type="Script" id=2]
+
+[node name="arrow" type="Sprite"]
+position = Vector2( -2.82837, -2.82837 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+color = Color( 1, 1, 1, 1 )

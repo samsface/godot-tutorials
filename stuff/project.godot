@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "PalletCanvas",
+"language": "GDScript",
+"path": "res://addons/pallet/pallet_canvas.gd"
+} ]
+_global_script_class_icons={
+"PalletCanvas": ""
+}
+
+[application]
+
+config/name="stuff"
+run/main_scene="res://addons/Node2D.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/pallet/plugin.cfg", "res://addons/snap/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

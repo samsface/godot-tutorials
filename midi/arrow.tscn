@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://arrow.png" type="Texture" id=1]
+[ext_resource path="res://arrow.gd" type="Script" id=2]
+
+[node name="left" type="Sprite"]
+modulate = Color( 0.75, 0.75, 0.75, 1 )
+position = Vector2( -142.031, 95.9791 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+color = Color( 0.878431, 0.411765, 0.411765, 1 )

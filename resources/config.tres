@@ -1,0 +1,89 @@
+[gd_resource type="Resource" load_steps=24 format=2]
+
+[ext_resource path="res://config.gd" type="Script" id=1]
+
+[sub_resource type="InputEventKey" id=1]
+scancode = 16777221
+
+[sub_resource type="InputEventKey" id=2]
+scancode = 16777222
+
+[sub_resource type="InputEventKey" id=3]
+scancode = 32
+
+[sub_resource type="InputEventJoypadButton" id=4]
+
+[sub_resource type="InputEventKey" id=5]
+scancode = 16777217
+
+[sub_resource type="InputEventJoypadButton" id=6]
+button_index = 1
+
+[sub_resource type="InputEventKey" id=7]
+scancode = 16777234
+
+[sub_resource type="InputEventJoypadButton" id=8]
+button_index = 13
+
+[sub_resource type="InputEventKey" id=9]
+scancode = 16777230
+
+[sub_resource type="InputEventKey" id=10]
+scancode = 16777218
+
+[sub_resource type="InputEventKey" id=11]
+shift = true
+scancode = 16777218
+
+[sub_resource type="InputEventKey" id=12]
+scancode = 16777229
+
+[sub_resource type="InputEventKey" id=13]
+scancode = 16777231
+
+[sub_resource type="InputEventJoypadButton" id=14]
+button_index = 14
+
+[sub_resource type="InputEventKey" id=15]
+scancode = 16777236
+
+[sub_resource type="InputEventKey" id=16]
+scancode = 16777235
+
+[sub_resource type="InputEventKey" id=17]
+scancode = 16777233
+
+[sub_resource type="InputEventJoypadButton" id=18]
+button_index = 15
+
+[sub_resource type="InputEventKey" id=19]
+scancode = 32
+
+[sub_resource type="InputEventJoypadButton" id=20]
+button_index = 3
+
+[sub_resource type="InputEventKey" id=21]
+scancode = 16777232
+
+[sub_resource type="InputEventJoypadButton" id=22]
+button_index = 12
+
+[resource]
+script = ExtResource( 1 )
+volume = 0.5
+show_tutorial = true
+input_map = {
+"ui_accept": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"ui_cancel": [ SubResource( 5 ), SubResource( 6 ) ],
+"ui_down": [ SubResource( 7 ), SubResource( 8 ) ],
+"ui_end": [ SubResource( 9 ) ],
+"ui_focus_next": [ SubResource( 10 ) ],
+"ui_focus_prev": [ SubResource( 11 ) ],
+"ui_home": [ SubResource( 12 ) ],
+"ui_left": [ SubResource( 13 ), SubResource( 14 ) ],
+"ui_page_down": [ SubResource( 15 ) ],
+"ui_page_up": [ SubResource( 16 ) ],
+"ui_right": [ SubResource( 17 ), SubResource( 18 ) ],
+"ui_select": [ SubResource( 19 ), SubResource( 20 ) ],
+"ui_up": [ SubResource( 21 ), SubResource( 22 ) ]
+}

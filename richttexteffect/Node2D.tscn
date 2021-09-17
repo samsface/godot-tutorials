@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://rich_text_type_with_signal.gd" type="Script" id=1]
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=2]
+[ext_resource path="res://HAMBH___.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="RichTextEffect" id=3]
+script = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 50.62
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 335.67
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle_random = 1.0
+scale = 19.65
+color = Color( 1, 0.929412, 0.552941, 1 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 2.67269, 0 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -3.6727
+margin_right = 796.327
+margin_bottom = 500.0
+theme = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[type_and_emit speed=0.99]
+[center]
+Have you ever used [shake]rich text box[/shake]? It's [color=red]pretty[/color] [rainbow]cool.[/rainbow]
+[/center]
+[/type_and_emit]"
+text = "
+
+Have you ever used rich text box? It's pretty cool.
+
+"
+custom_effects = [ SubResource( 3 ) ]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="particles" type="Particles2D" parent="RichTextLabel"]
+position = Vector2( 638.738, 274.744 )
+rotation = 4.67574
+emitting = false
+amount = 100
+lifetime = 22.28
+one_shot = true
+speed_scale = 3.64
+explosiveness = 1.0
+process_material = SubResource( 4 )

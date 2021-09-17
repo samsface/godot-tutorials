@@ -6,6 +6,7 @@ class CreateDrunkenTerrainJob extends Job:
 	func _init(request:Node, callback:String, offset:Vector2).(request, callback) -> void:
 		self.offset = offset
 
+	# runs on background thread
 	func _load() -> Array:
 		var to_instance := []
 
@@ -21,6 +22,7 @@ class CreateDrunkenTerrainJob extends Job:
 		
 		return to_instance
 
+	# runs on main thread but in tiny time slices
 	func _instance(to_instance) -> void:
 		var instance      = to_instance.resource.instance()
 		instance.position = to_instance.position * 16.0
@@ -38,7 +40,7 @@ func create_terrain_with_drunk_walk(offset:Vector2):
 					model[walker_position] = load("res://" + t + ".tscn").instance()
 					model[walker_position].position = walker_position * 16.0
 					add_child(model[walker_position])
-				walker_position += Vector2(randi() % 2, randi() % 2) * (-1.0 if randf() >= 0.5 else 1.0)
+				walker_position += Vector2(randi() % 2, randi() % 2) * (-1.0 if randf() >= 0.5  else 1.0)
 
 func _ready():
 	#create_terrain_with_drunk_walk(Vector2())

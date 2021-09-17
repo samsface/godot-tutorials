@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://stats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+health = 0.178
+magic = 0.503
+attack = 0.0

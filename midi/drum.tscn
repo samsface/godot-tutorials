@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://hat.png" type="Texture" id=1]
+[ext_resource path="res://drum.gd" type="Script" id=2]
+[ext_resource path="res://snare.png" type="Texture" id=3]
+[ext_resource path="res://rest.png" type="Texture" id=4]
+[ext_resource path="res://bass.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="rest" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="kick" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="snare" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="hat" type="Sprite" parent="."]
+texture = ExtResource( 1 )

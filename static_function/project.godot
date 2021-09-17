@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://utils.gd"
+} ]
+_global_script_class_icons={
+"Utils": ""
+}
+
+[application]
+
+config/name="Static Function"
+run/main_scene="res://Node2D.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+UtilsAuto="*res://utils_auto.gd"
+UtilsAuto2="*res://utils_auto2.gd"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
