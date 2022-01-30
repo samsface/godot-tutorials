@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/sprite/light.gd" type="Script" id=1]
+[ext_resource path="res://addons/sprite/255.png" type="Texture" id=2]
+
+[node name="r0" type="Button"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 28.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 28, 0 )
+icon = ExtResource( 2 )
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="."]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 22.0
+margin_bottom = 12.0
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

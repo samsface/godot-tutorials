@@ -1,0 +1,3 @@
+extends Sprite
+class_name PaintableSpriteOverlay
+

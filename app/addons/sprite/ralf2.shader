@@ -1,0 +1,15 @@
+shader_type canvas_item;
+
+uniform sampler2D color_swap_map;
+
+void fragment()
+{
+	vec4 color = texture(TEXTURE, UV, 0);
+
+	///////////////////////////////////////////////////////////////////////////
+	// color swap
+	color.rgb  = texture(color_swap_map, vec2(color.r, 0.0), 0).rgb;
+    ////////////////////////////////////////////////////////////////////////////
+
+	COLOR = color;
+}

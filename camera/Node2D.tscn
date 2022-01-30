@@ -55,6 +55,7 @@ __meta__ = {
 
 [node name="player" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
+frame = 2
 playing = true
 script = ExtResource( 2 )
 

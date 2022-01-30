@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/sprite/color.gd" type="Script" id=1]
+[ext_resource path="res://addons/sprite/255.png" type="Texture" id=2]
+[ext_resource path="res://addons/sprite/tool_box.tres" type="Material" id=3]
+
+[node name="r0" type="Button"]
+material = ExtResource( 3 )
+margin_right = 28.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 28, 0 )
+hint_tooltip = "1"
+icon = ExtResource( 2 )
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.00392157, 0, 0, 1 )

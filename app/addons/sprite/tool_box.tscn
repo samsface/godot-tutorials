@@ -1,0 +1,198 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://addons/sprite/tool_box.gd" type="Script" id=1]
+[ext_resource path="res://addons/sprite/west.png" type="Texture" id=2]
+[ext_resource path="res://addons/sprite/east.png" type="Texture" id=3]
+[ext_resource path="res://addons/sprite/north.png" type="Texture" id=4]
+[ext_resource path="res://addons/sprite/south.png" type="Texture" id=5]
+[ext_resource path="res://addons/sprite/noth_west.png" type="Texture" id=6]
+[ext_resource path="res://campaign/throne/zones/dark/swap.png" type="Texture" id=7]
+[ext_resource path="res://addons/sprite/north_east.png" type="Texture" id=9]
+[ext_resource path="res://addons/sprite/south_east.png" type="Texture" id=10]
+[ext_resource path="res://addons/sprite/south_west.png" type="Texture" id=11]
+[ext_resource path="res://addons/sprite/shadow.png" type="Texture" id=14]
+[ext_resource path="res://addons/sprite/color.gd" type="Script" id=15]
+[ext_resource path="res://addons/sprite/magic.gd" type="Script" id=21]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+colors = ExtResource( 7 )
+
+[node name="tools" type="GridContainer" parent="."]
+margin_right = 252.0
+margin_bottom = 20.0
+columns = 3
+
+[node name="pixel" type="Button" parent="tools"]
+margin_right = 43.0
+margin_bottom = 20.0
+text = "pixel"
+
+[node name="fill" type="Button" parent="tools"]
+margin_left = 47.0
+margin_right = 75.0
+margin_bottom = 20.0
+text = "fill"
+
+[node name="view" type="GridContainer" parent="."]
+margin_top = 24.0
+margin_right = 252.0
+margin_bottom = 44.0
+columns = 3
+
+[node name="pixel" type="Button" parent="view"]
+margin_right = 44.0
+margin_bottom = 20.0
+text = "color"
+
+[node name="fill" type="Button" parent="view"]
+margin_left = 48.0
+margin_right = 95.0
+margin_bottom = 20.0
+text = "slope"
+
+[node name="fill2" type="Button" parent="view"]
+margin_left = 99.0
+margin_right = 148.0
+margin_bottom = 20.0
+text = "depth"
+
+[node name="colors" type="GridContainer" parent="."]
+margin_top = 48.0
+margin_right = 252.0
+margin_bottom = 96.0
+columns = 8
+
+[node name="shade" type="GridContainer" parent="."]
+margin_top = 100.0
+margin_right = 252.0
+margin_bottom = 148.0
+columns = 8
+
+[node name="north" type="Button" parent="shade"]
+margin_right = 28.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 4 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.0352941, 0 )
+
+[node name="south" type="Button" parent="shade"]
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 5 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.00392157, 0 )
+
+[node name="west" type="Button" parent="shade"]
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 2 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.0156863, 0 )
+
+[node name="east" type="Button" parent="shade"]
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 3 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.0235294, 0 )
+
+[node name="north_west" type="Button" parent="shade"]
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.0392157, 0 )
+
+[node name="north_east" type="Button" parent="shade"]
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 9 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.0313726, 0 )
+
+[node name="south_west" type="Button" parent="shade"]
+margin_left = 192.0
+margin_right = 220.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 11 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.00784314, 0 )
+
+[node name="south_east" type="Button" parent="shade"]
+margin_left = 224.0
+margin_right = 252.0
+margin_bottom = 22.0
+hint_tooltip = "0"
+icon = ExtResource( 10 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0, 0, 0.00392157, 1 )
+
+[node name="shadow" type="Button" parent="shade"]
+use_parent_material = true
+margin_top = 26.0
+margin_right = 28.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 28, 0 )
+hint_tooltip = "104"
+icon = ExtResource( 14 )
+flat = true
+script = ExtResource( 15 )
+color = Color( 0.407843, 0, 0, 1 )
+
+[node name="depth" type="GridContainer" parent="."]
+margin_top = 152.0
+margin_right = 252.0
+margin_bottom = 200.0
+columns = 8
+
+[node name="light" type="GridContainer" parent="."]
+margin_top = 204.0
+margin_right = 252.0
+margin_bottom = 226.0
+columns = 8
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_top = 230.0
+margin_right = 252.0
+margin_bottom = 250.0
+columns = 2
+
+[node name="palette" type="Button" parent="GridContainer"]
+margin_right = 69.0
+margin_bottom = 20.0
+text = "palette..."
+
+[node name="magic" type="Button" parent="GridContainer"]
+margin_left = 73.0
+margin_right = 145.0
+margin_bottom = 20.0
+disabled = true
+text = "convert..."
+script = ExtResource( 21 )
+
+[connection signal="pressed" from="GridContainer/magic" to="." method="_on_magic_pressed"]

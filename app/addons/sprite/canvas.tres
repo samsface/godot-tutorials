@@ -1,0 +1,91 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://colors.tres" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4      clear_color    : hint_color;
+uniform vec4      multiply_color : hint_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform sampler2D color_map;
+
+uniform bool depth_view = false;
+uniform bool light_view = false;
+
+void fragment()
+{
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV);
+
+	if(color.g > 0.0)
+	{
+		discard;
+	}
+
+	if(color == clear_color)
+	{
+		discard;
+	}
+
+	if(depth_view)
+	{
+		int byte = int(round(color.b * 255.0));
+		float x = float(byte >> 4) * 2.0;
+		color.g = x / 255.0;
+	}
+	else if(light_view)
+	{
+		int byte = int(round(color.r * 255.0));
+		float x = float(byte >> 4) * 32.0;
+		color.r = x / 255.0;
+		color.g *= 0.0;
+		color.b *= 0.0;
+	}
+	else
+	{
+		float albedo = clamp(color.r, 0.0, 15.0/255.0);
+		float slope  = color.b;
+
+		////////////////////////////////////////////////////////////////////////////
+		// color map
+		color.rgb  = texture(color_map, vec2(albedo * 16.0, 0.0)).rgb;
+		////////////////////////////////////////////////////////////////////////////
+
+		float lum  = 0.2;
+		int   byte = int(round(slope * 255.0));
+		byte       = byte & ~(15 << 4);
+		
+		float vert = float((byte >> 2) - 1);
+		float horz = float((byte &  3) - 1);
+
+		color.rgb += horz * lum;
+		color.rgb += vert * lum;
+
+		/////
+
+		//color *= multiply_color;
+
+		float t = 2.0;
+		vec2 uv = UV;
+		float h = mod(uv.y, 1.0/16.0);
+		float v = mod(uv.x, 1.0/16.0);
+
+		if((h >= 0.0 && h <= SCREEN_PIXEL_SIZE.x * t) || (v > 0.0 && v <= SCREEN_PIXEL_SIZE.y * t))
+		{
+			
+			//color.g = 1.0 - color.g;
+			//color.b = 1.0 - color.b;
+			//color.r = 1.0 - color.r;
+			//color.a = 1.0;
+		}
+	}
+	
+	COLOR = color;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/clear_color = Color( 0, 1, 1, 1 )
+shader_param/multiply_color = Color( 1, 1, 1, 1 )
+shader_param/depth_view = false
+shader_param/light_view = false
+shader_param/color_map = ExtResource( 1 )

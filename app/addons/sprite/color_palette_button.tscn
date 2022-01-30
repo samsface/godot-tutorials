@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/sprite/color_palette_button.gd" type="Script" id=1]
+
+[node name="Button" type="ColorPickerButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+button_mask = 0
+color = Color( 0.647059, 0.937255, 0.67451, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="color_changed" from="." to="." method="_on_color_changed"]
+[connection signal="popup_closed" from="." to="." method="_on_popup_closed"]

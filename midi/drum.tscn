@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 texture = ExtResource( 4 )
 
 [node name="kick" type="Sprite" parent="."]
+position = Vector2( 61.4026, 49.3891 )
 texture = ExtResource( 5 )
 
 [node name="snare" type="Sprite" parent="."]
